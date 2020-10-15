@@ -6,5 +6,5 @@ module.exports = [
     {
         id: 2,
         name: "Adao"
-    }
+    } 
 ];  
