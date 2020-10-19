@@ -1,3 +1,3 @@
 test('sum two number', () => {
-    expect(1 + 2).toBe(3);
+    expect('oi').toBe('oi');
 });
