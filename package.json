@@ -7,8 +7,9 @@
     "dev": "nodemon server.js",
     "start": "node server.js",
     "test": "jest"
-  },  
+  },
   "devDependencies": {
+    "@shelf/jest-mongodb": "^1.2.3",
     "jest": "^26.5.3",
     "nodemon": "^2.0.4"
   }
