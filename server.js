@@ -8,7 +8,7 @@ const app = express();
 app.use(cors());
 
 app.get('/users', (req, res) => {
-    return res.json(data);
+    return res.send({data});
 });
-
-app.listen(process.env.PORT || 3000);
+ 
+module.exports = app;
