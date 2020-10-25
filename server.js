@@ -11,4 +11,4 @@ app.get('/users', (req, res) => {
     return res.json(data);
 });
 
-app.listen(process.env.PORT || 8080);
+app.listen(process.env.PORT || 3000);
