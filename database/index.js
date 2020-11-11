@@ -1,6 +1,8 @@
 const mongoose = require('mongoose');
 
-mongoose.connect('mongodb://localhost/nodedexbov', { useMongoClient: true });
+
+mongoose.connect('mongodb://localhost:27017/nodedevbox', { useNewUrlParser: true, useUnifiedTopology: true, useCreateIndex:true});
+
 mongoose.Promise = global.Promise;
 
-module.expres = mongoose;
+module.exports = mongoose;

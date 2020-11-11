@@ -4,11 +4,15 @@ const cors = require('cors');
 const data = require('./data');
 
 const app = express();
+
 const dados = [];
+
+require('./controllers/userController')(app);
+const datas = [];
 
 app.use(express.json());
 app.use(cors());
-
+app.use(express.json());
 app.get('/users', (req, res) => {    
     return res.json({dados});
 });
