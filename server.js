@@ -4,17 +4,21 @@ const cors = require('cors');
 const data = require('./data');
 
 const app = express();
+require('./controllers/userController')(app);
+const datas = [];
 
 app.use(cors());
-
+app.use(express.json());
 app.get('/users', (req, res) => {    
-    return res.json({data});
+    return res.json({datas});
 });
 
 app.post('/cadastro', (req, res) => {
-    const dados = data;
-    console.log(res.data);
-    return res.json({dados});
+    const dados = req.body;
+        
+    datas.push(dados);
+    
+    return res.json({datas});
 })
  
 module.exports = app;
