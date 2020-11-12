@@ -18,28 +18,22 @@ mongoose.connect(
     }
 );
 
-app.get('/users', (req, res) => {    
-    
-
-    return res.json({dados});
+app.get('/users', async(req, res) => {    
+    const users = await Usuario.find();
+    console.log(users);
+    return res.json({users});
 });
 
 app.post('/cadastro', async(req, res) => {
-    const {name: usuario, wpp: whatsapp, age: age} = req.body;
-    user = req.body;
-    const mail = user.mail;
-    console.log(mail);
-    //console.log(req.body);
-    /*
+    const {name: usuario, wpp: whatsapp, age: idade, mail: mail} = req.body;
+    console.log(req.body);
     const user = await Usuario.create({
         name: usuario,
-        email: emailt,
-        age: age,
-        whatsapp : whatsapp,
-        key: 4
+        email: mail,
+        age: idade,
+        whatsapp : whatsapp,        
     })
-    */
-    console.log(user);
+        
     return res.json({ user });
 });
  
