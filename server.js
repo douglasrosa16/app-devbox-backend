@@ -5,9 +5,6 @@ const mongoose = require('mongoose');
 const Usuario = require('./models/User');
 
 const app = express();
-const dados = [];
-
-const datas = [];
 
 app.use(express.json());
 app.use(cors());
@@ -22,25 +19,28 @@ mongoose.connect(
 );
 
 app.get('/users', (req, res) => {    
+    
+
     return res.json({dados});
 });
 
 app.post('/cadastro', async(req, res) => {
-    const req_name = 'Wellen';
-    const req_email = 'Wellen@hotmail.com';
-    const req_age = '10';
-    const req_whatsapp = '66999999';
-    const req_key = '1';    
-
-    const usuario = await Usuario.create({
-        name: req_name,
-        email: req_email,
-        age: req_age,
-        whatsapp : req_whatsapp,
-        key: req_key
+    const {name: usuario, wpp: whatsapp, age: age} = req.body;
+    user = req.body;
+    const mail = user.mail;
+    console.log(mail);
+    //console.log(req.body);
+    /*
+    const user = await Usuario.create({
+        name: usuario,
+        email: emailt,
+        age: age,
+        whatsapp : whatsapp,
+        key: 4
     })
-    
-    return res.json({ usuario });
+    */
+    console.log(user);
+    return res.json({ user });
 });
  
 module.exports = app;
