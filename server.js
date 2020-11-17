@@ -10,7 +10,7 @@ app.use(express.json());
 app.use(cors());
 
 mongoose.connect(
-    'mongodb://localhost:27017/nodedevbox', 
+    process.env.MONGO_URL, 
     { 
         useNewUrlParser: true, 
         useUnifiedTopology: true, 
@@ -25,10 +25,10 @@ app.get('/users', async(req, res) => {
 });
 
 app.post('/cadastro', async(req, res) => {
-    const {name: usuario, wpp: whatsapp, age: idade, mail: mail} = req.body;
+    const {name , wpp: whatsapp, age: idade, mail: mail} = req.body;
     console.log(req.body);
     const user = await Usuario.create({
-        name: usuario,
+        name,
         email: mail,
         age: idade,
         whatsapp : whatsapp,        
