@@ -10,7 +10,7 @@ app.use(express.json());
 app.use(cors());
 
 mongoose.connect(
-    process.env.MONGO_URL, 
+    'mongodb+srv://devbox:devbox@cluster0.gpr2d.mongodb.net/<dbname>?retryWrites=true&w=majority', 
     { 
         useNewUrlParser: true, 
         useUnifiedTopology: true, 
