@@ -42,7 +42,9 @@ app.post('/cadastro', async(req, res) => {
     return res.json({ user });
 });
 
-app.listen(process.env.PORT || 8080); 
+app.listen(process.env.PORT || 3000, function(){
+    console.log("Servidor no ar!");
+});
 
  
 
