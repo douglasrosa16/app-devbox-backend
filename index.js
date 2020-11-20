@@ -6,8 +6,8 @@ const Usuario = require('./models/user');
 
 const app = express();
 
-app.use(express.json());
 app.use(cors());
+app.use(express.json());
 
 mongoose.connect(
     'mongodb+srv://devbox:devbox@cluster0.gpr2d.mongodb.net/<dbname>?retryWrites=true&w=majority', 
@@ -19,14 +19,14 @@ mongoose.connect(
 );
 
 app.get('/',(req, res) => {
-    return res.json({mensagem: 'Ola mundo'})
+    return res.json({mensagem: 'DevBox - HomePage'})
 })
 
 
 app.get('/users', async(req, res) => {    
     const users = await Usuario.find();
     
-    return res.json({users});
+    return res.json(users);
 });
 
 app.post('/cadastro', async(req, res) => {
