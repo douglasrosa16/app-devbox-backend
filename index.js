@@ -17,7 +17,12 @@ mongoose.connect(
         useCreateIndex: true
     }
 );
-/*
+
+app.get('/',(req, res) => {
+    return res.json({mensagem: 'Ola mundo'})
+})
+
+
 app.get('/users', async(req, res) => {    
     const users = await Usuario.find();
     console.log(users);
@@ -36,7 +41,7 @@ app.post('/cadastro', async(req, res) => {
         
     return res.json({ user });
 });
-*/
+
 app.listen(process.env.PORT || 8080); 
 
  
