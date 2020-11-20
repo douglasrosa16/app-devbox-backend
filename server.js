@@ -25,7 +25,7 @@ app.get('/users', async(req, res) => {
 });
 
 app.post('/cadastro', async(req, res) => {
-    const {name , wpp: whatsapp, age: idade, mail: mail} = req.body;
+    const {name, wpp: whatsapp, age: idade, mail: mail} = req.body;
     
     const user = await Usuario.create({
         name,
